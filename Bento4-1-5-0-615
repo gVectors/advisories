@@ -5,7 +5,9 @@
 Bento4 MP4 & DASH Class Library, SDK and Tools
 A fast, modern, open source C++ toolkit for all your MP4 and MPEG DASH media format needs.
 
-Bento4 is a C++ class library and tools designed to read and write ISO-MP4 files. This format is defined in international specifications ISO/IEC 14496-12, 14496-14 and 14496-15. The format is a derivative of the Apple Quicktime file format, so Bento4 can be used to read and write most Quicktime files as well.
+Bento4 is a C++ class library and tools designed to read and write ISO-MP4 files. This format is defined in international 
+specifications ISO/IEC 14496-12, 14496-14 and 14496-15. The format is a derivative of the Apple Quicktime file format, so 
+Bento4 can be used to read and write most Quicktime files as well.
 
 https://www.bento4.com
 
@@ -32,7 +34,9 @@ Description: Access violation near NULL on source operand
 Short description: SourceAvNearNull (16/22)
 Hash: 4504b8474090b84917f7bf9eaaf2a8ae.aa20c4da10ac89e4bfce72be5b05d8c5
 Exploitability Classification: PROBABLY_NOT_EXPLOITABLE
-Explanation: The target crashed on an access violation at an address matching the source operand of the current instruction. This likely indicates a read access violation, which may mean the application crashed on a simple NULL dereference to data structure that has no immediate effect on control of the processor.
+Explanation: The target crashed on an access violation at an address matching the source operand of the current instruction. 
+This likely indicates a read access violation, which may mean the application crashed on a simple NULL dereference to data 
+structure that has no immediate effect on control of the processor.
 Other tags: AccessViolation (21/22)
 (gdb) bt
 #0  0x0000000000406e3f in AP4_AvccAtom::InspectFields(AP4_AtomInspector&) ()
@@ -50,22 +54,27 @@ Other tags: AccessViolation (21/22)
 ./mp4encrypt --method MPEG-CENC mp4encrypt_poc /tmp/123123
 
 (gdb) r --method MPEG-CENC ~/testbento4/bento4_pocs/mp4encrypt_min_out/mp4encrypt_poc /tmp/123123
-Starting program: /home/ojk/testbento4/Bento4-SDK-1-5-0-615.x86_64-unknown-linux/bin/mp4encrypt --method MPEG-CENC ~/testbento4/bento4_pocs/mp4encrypt_min_out/mp4encrypt_poc /tmp/123123
+Starting program: /home/ojk/testbento4/Bento4-SDK-1-5-0-615.x86_64-unknown-linux/bin/mp4encrypt --method MPEG-CENC 
+~/testbento4/bento4_pocs/mp4encrypt_min_out/mp4encrypt_poc /tmp/123123
 WARNING: this encryption method only applies to fragmented files
 WARNING: track ID 0 will not be encrypted
 
 Program received signal SIGSEGV, Segmentation fault.
-0x0000000000425ecc in AP4_Processor::Process(AP4_ByteStream&, AP4_ByteStream&, AP4_ByteStream*, AP4_Processor::ProgressListener*, AP4_AtomFactory&) ()
+0x0000000000425ecc in AP4_Processor::Process(AP4_ByteStream&, AP4_ByteStream&, AP4_ByteStream*, 
+AP4_Processor::ProgressListener*, AP4_AtomFactory&) ()
 (gdb) exploitable 
 __main__:99: UserWarning: GDB v7.11 may not support required Python API
 Description: Access violation near NULL on source operand
 Short description: SourceAvNearNull (16/22)
 Hash: 7feba4e00f8ed0d559d30f91716b8912.7feba4e00f8ed0d559d30f91716b8912
 Exploitability Classification: PROBABLY_NOT_EXPLOITABLE
-Explanation: The target crashed on an access violation at an address matching the source operand of the current instruction. This likely indicates a read access violation, which may mean the application crashed on a simple NULL dereference to data structure that has no immediate effect on control of the processor.
+Explanation: The target crashed on an access violation at an address matching the source operand of the current instruction. 
+This likely indicates a read access violation, which may mean the application crashed on a simple NULL dereference to data 
+structure that has no immediate effect on control of the processor.
 Other tags: AccessViolation (21/22)
 (gdb) bt
-#0  0x0000000000425ecc in AP4_Processor::Process(AP4_ByteStream&, AP4_ByteStream&, AP4_ByteStream*, AP4_Processor::ProgressListener*, AP4_AtomFactory&) ()
+#0  0x0000000000425ecc in AP4_Processor::Process(AP4_ByteStream&, AP4_ByteStream&, AP4_ByteStream*, 
+AP4_Processor::ProgressListener*, AP4_AtomFactory&) ()
 #1  0x000000000040233c in main ()
 (gdb) 
 
@@ -75,7 +84,8 @@ Other tags: AccessViolation (21/22)
 ./mp42ts mp42ts_poc /tmp/123123
 
 (gdb) r ~/testbento4/bento4_pocs/mp42ts_min_out/mp42ts_poc /tmp/123123
-Starting program: /home/ojk/testbento4/Bento4-SDK-1-5-0-615.x86_64-unknown-linux/bin/mp42ts ~/testbento4/bento4_pocs/mp42ts_min_out/mp42ts_poc /tmp/123123
+Starting program: /home/ojk/testbento4/Bento4-SDK-1-5-0-615.x86_64-unknown-linux/bin/mp42ts 
+~/testbento4/bento4_pocs/mp42ts_min_out/mp42ts_poc /tmp/123123
 
 Program received signal SIGSEGV, Segmentation fault.
 0x000000000041d3ea in AP4_AtomSampleTable::GetSample(unsigned int, AP4_Sample&) ()
@@ -85,7 +95,9 @@ Description: Access violation near NULL on source operand
 Short description: SourceAvNearNull (16/22)
 Hash: 25f738e0f9cab580299c20251d7fc5eb.25f738e0f9cab580299c20251d7fc5eb
 Exploitability Classification: PROBABLY_NOT_EXPLOITABLE
-Explanation: The target crashed on an access violation at an address matching the source operand of the current instruction. This likely indicates a read access violation, which may mean the application crashed on a simple NULL dereference to data structure that has no immediate effect on control of the processor.
+Explanation: The target crashed on an access violation at an address matching the source operand of the current instruction. 
+This likely indicates a read access violation, which may mean the application crashed on a simple NULL dereference to data 
+structure that has no immediate effect on control of the processor.
 Other tags: AccessViolation (21/22)
 (gdb) bt
 #0  0x000000000041d3ea in AP4_AtomSampleTable::GetSample(unsigned int, AP4_Sample&) ()
