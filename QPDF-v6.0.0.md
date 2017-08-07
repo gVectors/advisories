@@ -67,5 +67,5 @@ Other tags: DestAv (8/22), AccessViolation (21/22)
 
 # progress
  
-060817 - CVE Requested
+060817 - CVE Requested  
 070817 - CVE Assigned
