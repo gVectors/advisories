@@ -6,3 +6,6 @@ Bento4 mp4dump CVE-2017-12476
 
 ## TIBCO JasperReports Server v6.4.0
 TBD
+
+## QPDF v6.0.0
+QPDF CVE-2017-12595
