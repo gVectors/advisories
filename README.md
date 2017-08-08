@@ -1,7 +1,3 @@
-Hit me up!  
-https://scriptkidd1e.wordpress.com
-twitter: @sec_9emin1  
-
 # advisories
 ## Bento4 SDK and Tools v1-5-0-615
 ### NULL Pointer Dereference
