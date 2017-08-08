@@ -14,3 +14,8 @@ Awaiting update...
 ## QPDF v6.0.0
 ### Stack Corruption
 QPDF CVE-2017-12595  
+
+## CCFile 3.6
+### [TBD]
+Vendor Notified: 8th Aug
+Vendor Response: TBD
