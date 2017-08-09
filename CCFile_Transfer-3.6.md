@@ -10,7 +10,7 @@ http://www.ccfile.net/index.htm
 
 # affected programs & issues
 
-CCFile Windows Binary - v3.6asd
+CCFile Windows Binary - v3.6
 
 Tested on:  
 Windows XP Professional Service Pack 3  
