@@ -16,6 +16,7 @@ Awaiting update...
 QPDF CVE-2017-12595  
 
 ## CCFile 3.6
-### [TBD]
+### Unauthenticated Remote Denial of Service 
 Vendor Notified: 8th Aug
-Vendor Response: TBD
+Vendor Response: 9th Aug - No intention to fix as it is out of active development
+
