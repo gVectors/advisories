@@ -10,14 +10,12 @@ http://www.ccfile.net/index.htm
 
 # affected programs & issues
 
-CCFile Windows Binary - v3.6
+CCFile Windows Binary - v3.6asd
 
 Tested on:  
-Windows XP Professional  
-Service Pack 3  
+Windows XP Professional Service Pack 3  
   
-Windows 7 Professional
-Service Pack 1  
+Windows 7 Professional Service Pack 1  
 
 The web-based software allows a malicious user to remotely crash the service without authentication
 
@@ -29,7 +27,7 @@ discovered by: sec.9emin1@gmail.com
 The vulnerabilities were discovered using the Peach Fuzzer Community Edition  
 https://www.peach.tech
 
-# issue demonstration
+# issue demonstrationaa
 
 The following HTTP GET request will crash the service remotely:    
 ```
