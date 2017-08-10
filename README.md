@@ -1,9 +1,9 @@
 # advisories
 ## Bento4 SDK and Tools v1-5-0-615
 ### NULL Pointer Dereference
-Bento4 mp42ts CVE-2017-12474  
-Bento4 mp4encrypt CVE-2017-12475  
-Bento4 mp4dump CVE-2017-12476  
+CVE-2017-12474 - Bento4 mp42ts  
+CVE-2017-12475 - Bento4 mp4encrypt   
+CVE-2017-12476 - Bento4 mp4dump  
 
 ## TIBCO JasperReports Server v6.4.0
 ### [TBD]
@@ -13,8 +13,8 @@ Awaiting update...
 
 ## QPDF v6.0.0
 ### Stack Corruption
-QPDF CVE-2017-12595  
+CVE-2017-12595 - QPDF   
 
 ## CCFile v3.6
 ### Unauthenticated Remote Denial of Service 
-CCFile Windows Web-based Software CVE-2017-12784  
+CVE-2017-12784 - CCFile Windows Web-based Software   
