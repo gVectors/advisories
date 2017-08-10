@@ -17,6 +17,4 @@ QPDF CVE-2017-12595
 
 ## CCFile v3.6
 ### Unauthenticated Remote Denial of Service 
-Vendor Notified: 8th Aug  
-Vendor Response: 9th Aug - No intention to fix as it is out of active development
-
+CCFile Windows Web-based Software CVE-2017-12784  
