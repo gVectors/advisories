@@ -26,7 +26,7 @@ discovered by: sec.9emin1@gmail.com
 The vulnerabilities were discovered using the Peach Fuzzer Community Edition  
 https://www.peach.tech
 
-# issue demonstrationaa
+# issue demonstration
 
 The following HTTP GET request will crash the service remotely:    
 ```
