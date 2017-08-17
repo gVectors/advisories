@@ -18,3 +18,9 @@ CVE-2017-12595 - QPDF
 ## CCFile v3.6
 ### Unauthenticated Remote Denial of Service 
 CVE-2017-12784 - CCFile Windows Web-based Software   
+
+## MP3Gain v1.5.2.r2
+### Read-only Access Violation  
+Pending Update  
+### Stack Corruption  
+Pending Update  
