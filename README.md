@@ -21,6 +21,6 @@ CVE-2017-12784 - CCFile Windows Web-based Software
 
 ## MP3Gain v1.5.2.r2
 ### Read-only Access Violation  
-Pending Update  
+CVE-2017-12912 - MP3Gain    
 ### Stack Corruption  
-Pending Update  
+CVE-2017-12911 - MP3Gain 
