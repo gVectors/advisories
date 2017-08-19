@@ -25,6 +25,6 @@ CVE-2017-12912 - MP3Gain
 ### Stack Corruption  
 CVE-2017-12911 - MP3Gain 
 
-## ASN1 Compiler
+## ASN1 Compiler v0.9.28
 ### Memory Access Violation
 CVE-2017-12966 - ASN1C  
