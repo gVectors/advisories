@@ -9,17 +9,16 @@ the mp3 file directly, without decoding and re-encoding.
 
 http://mp3gain.sourceforge.net
 
-# affected programs & issues [to be updated]
+# affected programs & issues 
 
 MP3Gain - Version 1.5.2-r2
 
-NULL Pointer Dereferences SEGFAULTS found in:  
+Memory Access Violation & Memory Stack Corruption  
+found in:  
   
-mp4dump	- displays the entire atom/box structure of an MP4 file  
-mp4encrypt - encrypts an MP4 file (multiple encryption schemes are supported)  
-mp42ts - converts an MP4 file to an MPEG2-TS file.
+MP3Gain command line tool  
 
-# discovery [to be updated]
+# discovery 
 
 author: sec.9emin1@gmail.com  
 discovered by: sec.9emin1@gmail.com  
@@ -27,34 +26,77 @@ discovered by: sec.9emin1@gmail.com
 The vulnerabilities were discovered using the American Fuzzy Lop (2.49b)  
 http://lcamtuf.coredump.cx/afl/
 
-# mp4dump [to be updated]
-./mp4dump --format json mp4dump_poc
+# mp3gain 
+## Memory Access Violation 
+./mp3gain -p -r -e -x -s r mp3crash_poc
 ```
 Program received signal SIGSEGV, Segmentation fault.
-0x0000000000406e3f in AP4_AvccAtom::InspectFields(AP4_AtomInspector&) ()
+0x080698d9 in III_dequantize_sample (xr=<optimized out>, scf=0xbfff2818, gr_infos=<optimized out>, 
+    sfreq=<optimized out>, part2bits=<optimized out>) at mpglibDBL/layer3.c:904
+904              v = gr_infos->pow2gain[((*scf++) + (*pretab++)) << shift];
 (gdb) exploitable 
-__main__:99: UserWarning: GDB v7.11 may not support required Python API
-Description: Access violation near NULL on source operand
-Short description: SourceAvNearNull (16/22)
-Hash: 4504b8474090b84917f7bf9eaaf2a8ae.aa20c4da10ac89e4bfce72be5b05d8c5
-Exploitability Classification: PROBABLY_NOT_EXPLOITABLE
+Description: Access violation on source operand
+Short description: SourceAv (19/22)
+Hash: 53e2786f63890aa4a79b56d54ed326d8.53e2786f63890aa4a79b56d54ed326d8
+Exploitability Classification: UNKNOWN
 Explanation: The target crashed on an access violation at an address matching the source operand of the current instruction. 
-This likely indicates a read access violation, which may mean the application crashed on a simple NULL dereference to data 
-structure that has no immediate effect on control of the processor.
+This likely indicates a read access violation.
 Other tags: AccessViolation (21/22)
 (gdb) bt
-#0  0x0000000000406e3f in AP4_AvccAtom::InspectFields(AP4_AtomInspector&) ()
-#1  0x000000000040228f in AP4_Atom::Inspect(AP4_AtomInspector&) ()
-#2  0x000000000040a744 in AP4_AtomListInspector::Action(AP4_Atom*) const ()
-#3  0x0000000000424a25 in AP4_SampleEntry::Inspect(AP4_AtomInspector&) ()
-#4  0x000000000040a744 in AP4_AtomListInspector::Action(AP4_Atom*) const ()
-#5  0x000000000042b965 in AP4_StsdAtom::InspectFields(AP4_AtomInspector&) ()
-#6  0x000000000040228f in AP4_Atom::Inspect(AP4_AtomInspector&) ()
-#7  0x000000000040164b in main ()
+#0  0x080698d9 in III_dequantize_sample (xr=<optimized out>, scf=0xbfff2818, gr_infos=<optimized out>, 
+    sfreq=<optimized out>, part2bits=<optimized out>) at mpglibDBL/layer3.c:904
+#1  0x08066ad6 in do_layer3 (mp=<optimized out>, pcm_point=<optimized out>) at mpglibDBL/layer3.c:1646
+#2  0x08062e21 in decodeMP3 (mp=<optimized out>, in=<optimized out>, isize=<optimized out>, done=<optimized out>)
+    at mpglibDBL/interface.c:643
+#3  0x0804efb8 in main (argc=<optimized out>, argv=<optimized out>) at mp3gain.c:2262
+```
+
+# mp3gain 
+## Memory Stack Corruption 
+./mp3gain -p -r -e -x -s r mp3crash_poc2
+```
+Program received signal SIGSEGV, Segmentation fault.
+0x08057111 in WriteMP3GainAPETag (filename=<optimized out>, info=<optimized out>, fileTags=<optimized out>, 
+    saveTimeStamp=<optimized out>) at apetag.c:616
+616        fseek(outputFile,fileTags->tagOffset,SEEK_SET);
+(gdb) exploitable 
+__main__:99: UserWarning: GDB v7.11 may not support required Python API
+Description: Possible stack corruption
+Short description: PossibleStackCorruption (7/22)
+Hash: b5b60e68cab3fb81c1df4bea9baf53e2.d783abac785bfb7b9ba4b9010fb738ac
+Exploitability Classification: EXPLOITABLE
+Explanation: GDB generated an error while unwinding the stack and/or the stack contained return addresses that were not mapped 
+in the inferior's process address space and/or the stack pointer is pointing to a location outside the default stack region. 
+These conditions likely indicate stack corruption, which is generally considered exploitable.
+Other tags: SourceAv (19/22), AccessViolation (21/22)
+(gdb) bt
+#0  0x08057111 in WriteMP3GainAPETag (filename=<optimized out>, info=<optimized out>, fileTags=<optimized out>, 
+    saveTimeStamp=<optimized out>) at apetag.c:616
+#1  0x37333630 in ?? ()
+#2  0x38323134 in ?? ()
+#3  0x35353837 in ?? ()
+#4  0x33313138 in ?? ()
+#5  0x36363633 in ?? ()
+#6  0x32353233 in ?? ()
+#7  0x38303939 in ?? ()
+#8  0x34303931 in ?? ()
+#9  0x39323032 in ?? ()
+#10 0x34343431 in ?? ()
+#11 0x34303631 in ?? ()
+#12 0x34333339 in ?? ()
+#13 0x32343333 in ?? ()
+#14 0x37313733 in ?? ()
+#15 0x37333632 in ?? ()
+#16 0x33323432 in ?? ()
+#17 0x30313337 in ?? ()
+#18 0x30393837 in ?? ()
+#19 0x37303535 in ?? ()
+#20 0x33393132 in ?? ()
 ```
 
 # progress [to be updated]
 
-280717 - issue raised and vendor replied  
-290717 - issue acknowledged and confirmation of fixing it in next release
+150817 - discovery, no point of contact can be found  
+170817 - issue raised to mitre cve team  
+180817 - issue acknowledged  
 
