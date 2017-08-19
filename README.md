@@ -24,3 +24,7 @@ CVE-2017-12784 - CCFile Windows Web-based Software
 CVE-2017-12912 - MP3Gain    
 ### Stack Corruption  
 CVE-2017-12911 - MP3Gain 
+
+## ASN1 Compiler
+### Memory Access Violation
+CVE-2017-12966 - ASN1C  
