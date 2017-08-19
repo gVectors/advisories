@@ -94,7 +94,7 @@ Other tags: SourceAv (19/22), AccessViolation (21/22)
 #20 0x33393132 in ?? ()
 ```
 
-# progress [to be updated]
+# progress
 
 150817 - discovery, no point of contact can be found  
 170817 - issue raised to mitre cve team  
