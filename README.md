@@ -6,7 +6,12 @@ CVE-2017-12475 - Bento4 mp4encrypt
 CVE-2017-12476 - Bento4 mp4dump  
 
 ## Bento4 SDK and Tools v1-5-0-616
-### Incoming CVEs...  
+### READ/WRITE Memory Violations
+CVE-2017-14257 - Ap4AtomSampleTable.cpp; result = m_SttsAtom->GetDts(index, dts, &duration);
+CVE-2017-14258 - Ap4StscAtom.h; m_SampleDescriptionIndex(0) {}
+CVE-2017-14259 - Ap4StscAtom.cpp; m_Entries[i].m_SamplesPerChunk = samples_per_chunk;
+CVE-2017-14260 - Ap4StssAtom.cpp; m_Entries[i] = AP4_BytesToUInt32BE(&buffer[i*4]);
+CVE-2017-14261 - Ap4StszAtom.cpp; for (unsigned int i=0; i<sample_count; i++)
 
 ## QPDF v6.0.0
 ### Stack Corruption
