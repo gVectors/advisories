@@ -1,4 +1,9 @@
 # advisories
+
+## Symantec Norton Anti Virus Deluxe 2017
+### Local Privilege Escalation
+Confirmed, awaiting fixed release and advisory  
+
 ## Bento4 SDK and Tools v1-5-0-615
 ### NULL Pointer Dereference
 CVE-2017-12474 - Bento4 mp42ts  
