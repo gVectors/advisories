@@ -1,5 +1,9 @@
 # advisories
 
+## gVectors: WordPress Plugin -> wpForo Forums 1.5.1 
+### Privilege Escalation
+PENDING CVE  
+
 ## Bento4 SDK and Tools v1-5-0-615
 ### NULL Pointer Dereference
 CVE-2017-12474 - Bento4 mp42ts  
